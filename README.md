@@ -1,7 +1,7 @@
 # freeplaneGPT
-my tools written in chatgpt for optimising my personal research mindmaps
+quick tool written in chatgpt for optimising my personal research mindmaps
 
-my tools written in chatgpt for optimising my personal research mindmaps
+In the end I asked this: based on the format of that file Write a python script which does the following using the openai library: Load a freeplane mindmap file referenced from a command line argument, and parse it. Read the OpenAI API key from the "api.key" file. Read the list of topics from the "topics.txt" file. Extract social meta tags from each URL found in the mindmap nodes and replace the corresponding node's TEXT attribute. If the website sends back an error then skip to the next url node Retrieve the first 2000 characters of each URL's content and send it to the ChatGPT API for summarization and a best guess at one of the topics from the list and a catagory called other, where there is no good fit. Write the 500-character summary back to a new child node under each corresponding URL node. Assign labels (topics) to the nodes based on ChatGPT's best guess and move the nodes to appropriate sections of the mindmap. Save the updated mindmap to a new file
 
 This Python code performs the following tasks:
 
@@ -19,4 +19,4 @@ It uses the argparse module to parse the command-line arguments, and calls the m
 
 In summary, this code is a tool for automatically generating summaries and categorizing web pages in a Freeplane mindmap file using natural language processing and web scraping techniques.
 
-In the end I asked this: based on the format of that file Write a python script which does the following using the openai library: Load a freeplane mindmap file referenced from a command line argument, and parse it. Read the OpenAI API key from the "api.key" file. Read the list of topics from the "topics.txt" file. Extract social meta tags from each URL found in the mindmap nodes and replace the corresponding node's TEXT attribute. If the website sends back an error then skip to the next url node Retrieve the first 2000 characters of each URL's content and send it to the ChatGPT API for summarization and a best guess at one of the topics from the list and a catagory called other, where there is no good fit. Write the 500-character summary back to a new child node under each corresponding URL node. Assign labels (topics) to the nodes based on ChatGPT's best guess and move the nodes to appropriate sections of the mindmap. Save the updated mindmap to a new file
+

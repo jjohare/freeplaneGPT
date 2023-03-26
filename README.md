@@ -2,7 +2,10 @@
 
 This Python script processes a list of tasks, each containing a URL, to generate a mindmap. It utilizes GPT-3 to categorize the tasks and provide summaries. The script performs the following actions:
 
-1. Reads tasks from a JSON file.
+1. Reads tasks from a JSON file called NoNonsenseNotes_Backup.json which is a backup from 
+
+https://f-droid.org/en/packages/com.nononsenseapps.notepad/
+
 2. Extracts the URL from each task title.
 3. Fetches metadata (title and description) for each URL, which is used to update the task title.
 4. Reads a list of topics from a CSV file.

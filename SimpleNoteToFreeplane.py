@@ -170,3 +170,36 @@ for task_node in import_nodes:
 
 # Save the modified mindmap to a new file
 tree.write("modified_mindmap.mm", encoding="utf-8", xml_declaration=True)
+
+# Function to export topics and summaries as a LaTeX formatted file
+def export_to_latex_file(tree, filename):
+    root = tree.getroot()
+    main_node = root.find(".//node")
+
+    # Initialize the LaTeX formatted string
+    latex_output = "\\chapter{Imported from phone}\n"
+
+    # Iterate through topics and append the content to the LaTeX formatted string
+    for topic_node in main_node.findall("node"):
+        topic = topic_node.get("TEXT")
+        if topic != "IMPORT":
+            latex_output += f"\\subsubsection{{{topic}}}\n"
+
+            # Iterate through the task_nodes within import_node
+            for place_holder_topic in import_node.findall("node"):
+                if place_holder_topic.get("TEXT") == topic:
+                    for summary_node in place_holder_topic.findall("node/node"):
+                        summary_text = summary_node.get("TEXT")
+                        link = summary_node.get("LINK", "")
+
+                        if link:
+                            latex_output += f"(\\href{{{link}}}{{{link}}}) "
+
+                        latex_output += f"{summary_text}\n\n"
+
+    # Write the LaTeX formatted string to the specified file
+    with open(filename, "w") as tex_file:
+        tex_file.write(latex_output)
+
+# Call the export_to_latex_file function to export the modified mindmap
+export_to_latex_file(tree, "exportChapter.tex")

@@ -1,9 +1,4 @@
-from __future__ import print_function
 #!/usr/bin/env python
-
-
-# Loading testMap.mm for integration
-map_file_path = "./testMap.mm"
 #-*- coding: utf-8 -*-
 
 
@@ -65,6 +60,7 @@ map_file_path = "./testMap.mm"
 
 
 # generals
+from __future__ import print_function
 import datetime
 import os
 import re
@@ -170,7 +166,7 @@ class Mindmap(object):
         #
 
         # path of instance's mindmap file
-        self._path = map_file_path
+        self._path = path
 
         # type, version
         self._type = mtype
@@ -820,7 +816,7 @@ class Mindmap(object):
         # save mindmap into file
         #
 
-        mm.save("/mnt/data/testMap.mm")
+        mm.save("example101.mm")
 
 
 
